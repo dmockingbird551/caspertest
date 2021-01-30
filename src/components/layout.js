@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
+import NavBar from "./nav-bar"
 
 import "../styles/index.sass";
 
@@ -44,7 +45,9 @@ const TemplateWrapper = ({ children }) => {
         }
       `}
       render={data => (
+
         <div className={`container ${showMenu ? "is-open" : ""}`}>
+          <NavBar/>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
